@@ -1,0 +1,25 @@
+From 3fb5c3feb8eb9a1a0f12be951d0e0c9fdc93b6ed Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Umut=20=C3=87a=C4=9Fan=20Demirer?= <umutcagand@protonmail.com>
+Date: Thu, 19 Nov 2026 17:26:49 +0000
+Subject: [PATCH 4/5] m20lte: legacy props for the Rising OTA banner (local)
+
+---
+ lineage_m20lte.mk | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/lineage_m20lte.mk b/lineage_m20lte.mk
+index 405ff7d..4dc2bdd 100644
+--- a/lineage_m20lte.mk
++++ b/lineage_m20lte.mk
+@@ -13,3 +13,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
+ TARGET_ENABLE_BLUR := false
+ WITH_GMS := true
+ TARGET_USES_PICO_GAPPS := true
++
++# Rising OTA banner reads these legacy props
++PRODUCT_SYSTEM_PROPERTIES += \
++    ro.build.product=m20lte \
++    ro.product.manufacturer=samsung
+-- 
+2.43.0
+

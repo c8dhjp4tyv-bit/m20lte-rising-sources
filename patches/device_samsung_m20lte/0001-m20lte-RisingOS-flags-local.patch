@@ -1,0 +1,28 @@
+From 630ee704930d72d56626e83d813040fd683350df Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Umut=20=C3=87a=C4=9Fan=20Demirer?= <umutcagand@protonmail.com>
+Date: Thu, 19 Nov 2026 16:11:25 +0000
+Subject: [PATCH 1/5] m20lte: RisingOS flags (local)
+
+---
+ lineage_m20lte.mk | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/lineage_m20lte.mk b/lineage_m20lte.mk
+index 8d28e84..cb031a0 100644
+--- a/lineage_m20lte.mk
++++ b/lineage_m20lte.mk
+@@ -4,3 +4,11 @@ $(call inherit-product, device/samsung/m20lte/full_m20lte.mk)
+ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+ 
+ PRODUCT_NAME := lineage_m20lte
++
++# RisingOS
++RISING_MAINTAINER := umutcagand
++PRODUCT_BUILD_PROP_OVERRIDES += \
++    RisingChipset="Exynos 7904" \
++    RisingMaintainer="umutcagand"
++TARGET_ENABLE_BLUR := false
++WITH_GMS := true
+-- 
+2.43.0
+

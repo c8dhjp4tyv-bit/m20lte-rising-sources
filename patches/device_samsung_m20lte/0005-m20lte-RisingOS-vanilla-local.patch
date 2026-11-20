@@ -1,0 +1,26 @@
+From 1c97e74528deb779049ac1e5a8f7ce68266b32e7 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Umut=20=C3=87a=C4=9Fan=20Demirer?= <umutcagand@protonmail.com>
+Date: Thu, 19 Nov 2026 18:06:21 +0000
+Subject: [PATCH 5/5] m20lte: RisingOS vanilla (local)
+
+---
+ lineage_m20lte.mk | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/lineage_m20lte.mk b/lineage_m20lte.mk
+index 4dc2bdd..98b070c 100644
+--- a/lineage_m20lte.mk
++++ b/lineage_m20lte.mk
+@@ -11,8 +11,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
+     RisingChipset="Exynos 7904" \
+     RisingMaintainer="umutcagand"
+ TARGET_ENABLE_BLUR := false
+-WITH_GMS := true
+-TARGET_USES_PICO_GAPPS := true
++WITH_GMS := false
+ 
+ # Rising OTA banner reads these legacy props
+ PRODUCT_SYSTEM_PROPERTIES += \
+-- 
+2.43.0
+

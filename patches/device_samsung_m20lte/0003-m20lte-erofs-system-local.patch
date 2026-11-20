@@ -1,0 +1,37 @@
+From d61e2bf294c9a0131fb159bca96a4e35973fbdfc Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Umut=20=C3=87a=C4=9Fan=20Demirer?= <umutcagand@protonmail.com>
+Date: Thu, 19 Nov 2026 17:19:52 +0000
+Subject: [PATCH 3/5] m20lte: erofs system (local)
+
+---
+ BoardConfig.mk               | 1 +
+ rootdir/etc/fstab.exynos7904 | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/BoardConfig.mk b/BoardConfig.mk
+index 487bb6a..7196d47 100644
+--- a/BoardConfig.mk
++++ b/BoardConfig.mk
+@@ -24,6 +24,7 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
+ BOARD_CACHEIMAGE_PARTITION_SIZE := 157286400
+ BOARD_VENDORIMAGE_PARTITION_SIZE   := 452984832
+ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
++BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
+ 
+ BOARD_ROOT_EXTRA_SYMLINKS := \
+     /mnt/vendor/efs:/efs \
+diff --git a/rootdir/etc/fstab.exynos7904 b/rootdir/etc/fstab.exynos7904
+index 7942b91..530e1aa 100644
+--- a/rootdir/etc/fstab.exynos7904
++++ b/rootdir/etc/fstab.exynos7904
+@@ -3,6 +3,7 @@
+ # The filesystem that contains the filesystem checker binary (typically /system) cannot
+ # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+ 
++/dev/block/platform/13500000.dwmmc0/by-name/SYSTEM		/system		erofs	ro											wait,first_stage_mount
+ /dev/block/platform/13500000.dwmmc0/by-name/SYSTEM		/system		ext4	ro											wait,first_stage_mount
+ /dev/block/platform/13500000.dwmmc0/by-name/VENDOR		/vendor		ext4	ro											wait,first_stage_mount
+ /dev/block/platform/13500000.dwmmc0/by-name/BOOT		/boot		emmc	defaults									recoveryonly
+-- 
+2.43.0
+

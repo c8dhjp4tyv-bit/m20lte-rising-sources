@@ -1,0 +1,21 @@
+From 6e8edcaa3dc26add07dd14c2e5fc4fb099ef4c04 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Umut=20=C3=87a=C4=9Fan=20Demirer?= <umutcagand@protonmail.com>
+Date: Thu, 19 Nov 2026 17:02:05 +0000
+Subject: [PATCH 2/5] m20lte: RisingOS pico GApps (local)
+
+---
+ lineage_m20lte.mk | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/lineage_m20lte.mk b/lineage_m20lte.mk
+index cb031a0..405ff7d 100644
+--- a/lineage_m20lte.mk
++++ b/lineage_m20lte.mk
+@@ -12,3 +12,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
+     RisingMaintainer="umutcagand"
+ TARGET_ENABLE_BLUR := false
+ WITH_GMS := true
++TARGET_USES_PICO_GAPPS := true
+-- 
+2.43.0
+
